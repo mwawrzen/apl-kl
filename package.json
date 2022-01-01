@@ -1,0 +1,14 @@
+{
+  "name": "apl-kl-heroku",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Michał Wawrzeń 3i2a",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
