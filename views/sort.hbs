@@ -1,0 +1,13 @@
+<form class="sort-order" action="/order" method="get" onchange="this.submit()">
+  <label><input name="order" type="radio" value="true" {{#if asc}}checked{{/if}}> rosnąco</label>
+  <label><input name="order" type="radio" value="false"{{#if desc}}checked{{/if}}> malejąco</label>
+</form>
+<table class="table">
+  {{#each users}}
+    <tr>
+      <td>id: {{id}}</td>
+      <td>user: {{username}} - {{password}}</td>
+      <td>age: {{age}}</td>
+    </tr>
+  {{/each}}
+</table>

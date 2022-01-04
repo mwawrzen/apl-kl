@@ -1,0 +1,11 @@
+<table class="table">
+{{#each users}}
+  <tr>
+    <td>id: {{id}}</td>
+    <td>user: {{username}} - {{password}}</td>
+    <td>student: <input type="checkbox" disabled {{#if student}}checked{{/if}}></td>
+    <td>wiek: {{age}}</td>
+    <td>gender: {{gender}}</td>
+  </tr>
+{{/each}}
+</table>

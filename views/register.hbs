@@ -1,0 +1,14 @@
+<h1 class="main-heading">register page</h1>
+<form action="/register" method="post"> <!-- onchange="this.submit()" -->
+  <label class="label">login: <input id="username" type="text" name="username"></label>
+  <label class="label">password: <input type="password" name="password"></label>
+  <label class="label">age: <input type="number" name="age"></label>
+  <label class="label">uczen: <input type="checkbox" name="student"></label>
+  <label class="label">gender:
+    <div>
+      <label class="radio"><input type="radio" name="gender" value="female">female</label>
+      <label class="radio"><input type="radio" name="gender" value="male">male</label>
+    </div>
+  </label>
+  <input type="submit" value="register">
+</form>
