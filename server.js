@@ -77,9 +77,10 @@ app.post('/register', (req, res) => {
   const { username, password, age, gender, student } = req.body;
 
   if (
+    !username || !password || !age || !gender ||
     username.length < 3 || username.length > 30 ||
     password.length < 3 || password.length > 30 ||
-    !gender || (gender !== GENDER.FEMALE && gender !== GENDER.MALE) ||
+    (gender !== GENDER.FEMALE && gender !== GENDER.MALE) ||
     age < 0 || age > 99 || isNaN(age) ||
     users.some(user => user.username === username)
   ) {
