@@ -78,6 +78,8 @@ app.post('/register', (req, res) => {
 
   if (
     !username || !password || !age || !gender ||
+    typeof username !== 'string' ||
+    typeof password !== 'string' ||
     username.length < 3 || username.length > 30 ||
     password.length < 3 || password.length > 30 ||
     (gender !== GENDER.FEMALE && gender !== GENDER.MALE) ||
