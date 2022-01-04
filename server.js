@@ -80,7 +80,7 @@ app.post('/register', (req, res) => {
     username.length < 3 || username.length > 30 ||
     password.length < 3 || password.length > 30 ||
     !gender || (gender !== GENDER.FEMALE && gender !== GENDER.MALE) ||
-    age < 0 || age > 99 ||
+    age < 0 || age > 99 || isNaN(age) ||
     users.some(user => user.username === username)
   ) {
     return res.redirect('/register');
