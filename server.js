@@ -7,8 +7,13 @@ app.use(express.urlencoded({ extended: true }));
 
 const PORT = process.env.PORT || 3000;
 
+const GENDER = {
+  MALE: 'male',
+  FEMALE: 'female'
+};
+
 const users = [
-  { id: 1, username: 'admin', password: '@', age: 100, gender: 'male', student: false }
+  { id: 1, username: 'admin', password: '@', age: 100, gender: GENDER.MALE, student: false }
 ];
 
 let usersSortedByAgeAsc, usersSortedByAgeDesc, maleUsers, femaleUsers;
@@ -17,8 +22,8 @@ const sortUsers = () => {
   usersSortedByAgeAsc = [...users].sort((a, b) => Number(a.age) - Number(b.age));
   usersSortedByAgeDesc = [...users].sort((a, b) => Number(b.age) - Number(a.age));
 
-  maleUsers = users.filter(({ gender }) => gender === 'male');
-  femaleUsers = users.filter(({ gender }) => gender === 'female');
+  maleUsers = users.filter(({ gender }) => gender === GENDER.MALE);
+  femaleUsers = users.filter(({ gender }) => gender === GENDER.FEMALE);
 };
 
 let isUserLogged = false;
@@ -72,12 +77,13 @@ app.post('/register', (req, res) => {
   const { username, password, age, gender, student } = req.body;
 
   if (
-    username.length < 3 ||
-    password.length < 3 ||
-    age < 0 ||
-    !gender
+    username.length < 3 || username.length > 30 ||
+    password.length < 3 || password.length > 30 ||
+    !gender || (gender !== GENDER.FEMALE && gender !== GENDER.MALE) ||
+    age < 0 || age > 99 ||
+    users.some(user => user.username === username)
   ) {
-    res.redirect('/register');
+    return res.redirect('/register');
   }
 
   const userObj = {
@@ -91,7 +97,7 @@ app.post('/register', (req, res) => {
 
   users.push(userObj);
 
-  res.send(`Witaj <b>${username}</b>! Jesteś zarejestrowan${gender === 'male' ? 'y' : 'a'}`);
+  res.send(`Witaj <b>${username}</b>! Jesteś zarejestrowan${gender === GENDER.MALE ? 'y' : 'a'}`);
 });
 
 app.post('/login', (req, res) => {
@@ -110,4 +116,4 @@ app.engine('hbs', hbs({ defaultLayout: 'main.hbs' }));
 app.set('view engine', 'hbs');
 app.use(express.static('static'));
 
-app.listen(PORT, () => console.log(`Start serwera na porcie ${PORT}`));
+app.listen(PORT, () => console.log(`Server has started on port ${PORT}`));
