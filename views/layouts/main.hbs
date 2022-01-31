@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Files</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <ul>
+            <li><a href="/upload">upload</a></li>
+            <li><a href="/fileManager">file manager</a></li>
+            <li><a href="/info">info</a></li>
+        </ul>
+    </header>
+    <section class="content-container">
+        <aside class="aside">
+            {{text}} <br><br>
+            {{#if url}}
+                <a href="{{url.url}}">
+                    {{url.text}}
+                </a>
+            {{/if}}
+        </aside>
+        <main class="content">
+            {{{body}}}
+        </main>
+    </section>
+</body>
+
+</html>

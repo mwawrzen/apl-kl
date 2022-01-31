@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #eee;
+    color: #111;
+    font-family: sans-serif
+}
+
+.main-header {
+    background: teal;
+}
+
+.main-header ul {
+    display: flex;
+    list-style: none
+}
+
+.main-header a {
+    display: block;
+    padding: 1rem 2rem;
+    color: #eee;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 22px
+}
+
+.main-header a:hover {
+    text-decoration: underline
+}
+
+.content-container {
+    display: flex;
+    flex-grow: 1
+}
+
+.aside {
+    flex: 1;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-style: italic;
+    color: #eee;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: #444;
+}
+
+.aside a {
+    color: #eee
+}
+
+.aside a:hover {
+    color: crimson
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 4
+}
+
+.form-container {
+    display: grid;
+    place-items: center;
+    margin-top: 5rem
+}
+
+.files-form {
+    display: flex;
+    flex-direction: column
+}
+
+.files-form input[type="file"] {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 1rem 0
+}
+
+.files-form input[type="submit"] {
+    padding: .8rem 1.2rem;
+    font-weight: 700;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-style: italic;
+    font-size: 16px;
+    outline: none;
+    background: none;
+    border: 3px solid teal;
+    border-radius: 1rem;
+    cursor: pointer
+}
+
+.files-form input[type="submit"]:hover {
+    background: teal;
+    color: #eee
+}
+
+.files-table {
+    width: 100%;
+    border-collapse: collapse
+}
+
+.files-table th {
+    background: #333;
+    color: #eee;
+    font-weight: 700
+}
+
+.files-table th,
+.files-table td {
+    padding: 1rem;
+    text-align: center
+}
+
+.files-table tr:nth-child(odd) {
+    background: #ccc
+}
+
+.files-table a {
+    color: teal;
+    text-decoration: none
+}
+
+.files-table a:hover {
+    text-decoration: underline
+}
+
+.files-table img {
+    width: 100%;
+    max-width: 30px
+}
+
+.info {
+    list-style: none;
+    padding: 2.5rem 3rem
+}
+
+.info li {
+    font-size: 16px;
+    font-style: italic;
+    margin: 1rem 0;
+    line-height: 160%
+}
+
+.info span {
+    font-style: normal;
+    font-weight: 700;
+    text-decoration: underline;
+    color: teal
+}
+
+.info-h2 {
+    text-align: center;
+    margin: 3rem
+}

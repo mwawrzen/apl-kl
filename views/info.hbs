@@ -1,0 +1,12 @@
+{{#if file}}
+<ul class="info">
+  <li><span>ID:</span> {{file.id}}</li>
+  <li><span>Nazwa:</span> {{file.name}}</li>
+  <li><span>Rozmiar:</span> {{file.size}}</li>
+  <li><span>Typ pliku:</span> {{file.type}}</li>
+  <li><span>Ścieżka do pliku:</span> {{file.path}}</li>
+  <li><span>Data wgrania:</span> {{file.date}}</li>
+</ul>
+{{else}}
+<h2 class="info-h2">Brak wybranego pliku</h2>
+{{/if}}

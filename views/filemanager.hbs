@@ -1,0 +1,24 @@
+<table class="files-table">
+    <tr>
+        <th>id</th>
+        <th>image</th>
+        <th>name</th>
+        <th>size</th>
+        <th>type</th>
+        <th>-</th>
+        <th>-</th>
+        <th>-</th>
+    </tr>
+    {{#each files}}
+    <tr>
+        <td>{{this.id}}</td>
+        <td><img src={{this.image}} alt="File image"></td>
+        <td>{{this.name}}</td>
+        <td>{{this.size}}</td>
+        <td>{{this.type}}</td>
+        <td><a href="/delete?file={{this.id}}">delete</a></td>
+        <td><a href="/info?file={{this.id}}">info</a></td>
+        <td><a href="/download?file={{this.id}}">download</a></td>
+    </tr>
+    {{/each}}
+</table>
